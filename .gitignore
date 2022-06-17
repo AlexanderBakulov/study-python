@@ -131,3 +131,4 @@ dmypy.json
 #
 .idea/
 examples/
+/requirements.txt
