@@ -26,3 +26,11 @@
 """
 
 ip = "192.168.3.1"
+ip_list = ip.split('.')
+
+str1 = f'{int(ip_list[0]):<10}{int(ip_list[1]):<10}{int(ip_list[2]):<10}{int(ip_list[3]):<10}'
+str2 = '{:08b}  {:08b}  {:08b}  {:08b}'.format(int(ip_list[0]), int(ip_list[1]), int(ip_list[2]), int(ip_list[3]))
+
+
+print(str1)
+print(str2)
