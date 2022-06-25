@@ -50,3 +50,11 @@ london_co = {
         "routing": True,
     },
 }
+
+try:
+    eq_name = input('Введите имя устройства: ')
+    eq_keys = ', '.join(list(london_co[eq_name].keys()))
+    eq_par = input(f'Введите имя параметра из списка ({eq_keys}) :')
+    print(f'for {eq_name} parameter {eq_par} is {london_co[eq_name][eq_par]}')
+except KeyError:
+    print("Equipment not found or fail parameter")

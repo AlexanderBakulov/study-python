@@ -46,3 +46,11 @@ london_co = {
         "routing": True,
     },
 }
+
+eq_name = input('Введите имя устройства: ')
+try:
+    print(london_co[eq_name])
+except KeyError:
+    print("Equipment not found")
+
+
