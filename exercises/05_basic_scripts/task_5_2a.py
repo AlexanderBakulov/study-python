@@ -49,3 +49,29 @@ bin_ip = "00001010000000010000000111000011"
 Ограничение: Все задания надо выполнять используя только пройденные темы.
 
 """
+
+prefix = input('Input ip and mask (example 10.1.1.12/24): ')
+
+prefix_list = prefix.split('.')
+slash_id = prefix_list[3].find('/')
+mask = prefix_list[3][slash_id:]
+prefix_list[3] = prefix_list[3][:slash_id]
+mask_len = int(mask[1:])
+
+mask_bin = '1'*mask_len + '0'*(32 - mask_len)
+mask_dec = f'{int(mask_bin[0:8],2):<10}{int(mask_bin[8:16], 2):<10}{int(mask_bin[16:24], 2):<10}{int(mask_bin[24:32], 2):<10}'
+
+ip_addr_1 = f'{int(prefix_list[0]):<10}{int(prefix_list[1]):<10}{int(prefix_list[2]):<10}{int(prefix_list[3]):<10}'
+ip_addr_2 = '{:08b}  {:08b}  {:08b}  {:08b}'.format(int(prefix_list[0]), int(prefix_list[1]), int(prefix_list[2]), int(prefix_list[3]))
+
+mask_bits = f'{mask_bin[0:8]}  {mask_bin[8:16]}  {mask_bin[16:24]}  {mask_bin[24:32]}'
+
+
+
+print('Network:')
+print(ip_addr_1)
+print(ip_addr_2 + '\n')
+print('Mask:')
+print(mask)
+print(mask_dec)
+print(mask_bits)
