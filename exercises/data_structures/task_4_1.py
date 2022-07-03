@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Задание 4.2
+Задание 4.1
 
-Преобразовать строку в переменной mac из формата XXXX:XXXX:XXXX
-в формат XXXX.XXXX.XXXX
+Используя подготовленную строку nat, получить новую строку, в которой в имени
+интерфейса вместо FastEthernet написано GigabitEthernet.
 Полученную новую строку вывести на стандартный поток вывода (stdout) с помощью print.
 
 Ограничение: Все задания надо выполнять используя только пройденные темы.
@@ -12,7 +12,15 @@
 без получения результатов из исходных данных с помощью Python.
 Это не значит, что задание сделано правильно, просто на данном этапе сложно иначе
 проверять результат.
-"""
 
-mac = "AAAA:BBBB:CCCC"
-print(mac.replace(':', '.'))
+"""
+import pytest
+
+
+def task_4_1():
+    nat = "ip nat inside source list ACL interface FastEthernet0/1 overload"
+    print(nat.replace('Fast', 'Gigabit'))
+    return nat.replace('Fast', 'Gigabit')
+
+
+task_4_1()
